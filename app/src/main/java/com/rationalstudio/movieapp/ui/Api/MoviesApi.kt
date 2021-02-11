@@ -1,8 +1,6 @@
 package com.rationalstudio.movieapp.ui.Api
 
-import com.rationalstudio.movieapp.ui.Movies
-import com.rationalstudio.movieapp.ui.MoviesResponse
-import retrofit2.Call
+import com.rationalstudio.movieapp.ui.Models.MoviesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
