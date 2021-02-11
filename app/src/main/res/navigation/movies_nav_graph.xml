@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/moviesDetailFragment"
         android:name="com.rationalstudio.movieapp.ui.Fragments.MoviesDetailFragment"
-        android:label="MoviesDetailFragment" />
+        android:label="MoviesDetailFragment" >
+        <argument
+            android:name="movie"
+            app:argType="com.rationalstudio.movieapp.ui.Models.Movies" />
+    </fragment>
     <fragment
         android:id="@+id/moviesFragment"
         android:name="com.rationalstudio.movieapp.ui.Fragments.MoviesFragment"
@@ -25,23 +29,11 @@
         android:name="com.rationalstudio.movieapp.ui.Fragments.SavedMoviesFragment"
         android:label="SavedMoviesFragment" >
         <action
-            android:id="@+id/action_savedMoviesFragment_to_moviesDetailFragment"
+            android:id="@+id/action_savedMoviesFragment2_to_moviesDetailFragment"
             app:destination="@id/moviesDetailFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>/>
-    </fragment>
-    <fragment
-        android:id="@+id/searchMoviesFragment"
-        android:name="com.rationalstudio.movieapp.ui.Fragments.SearchMoviesFragment"
-        android:label="SearchMoviesFragment" >
-        <action
-            android:id="@+id/action_searchMoviesFragment_to_moviesDetailFragment"
-            app:destination="@id/moviesDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>/>
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 </navigation>

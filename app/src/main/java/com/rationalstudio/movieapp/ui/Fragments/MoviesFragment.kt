@@ -5,7 +5,9 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.rationalstudio.movieapp.R
 import com.rationalstudio.movieapp.ui.Adapters.MovieAdapter
 import com.rationalstudio.movieapp.ui.MainActivity
@@ -25,6 +27,14 @@ class MoviesFragment: Fragment(R.layout.movies_fragment) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         setupRecyclerView()
+
+        movieAdapter.setOnItemClickListener {
+
+                viewModel.saveMovie(it)
+                Snackbar.make(view,"Movie Saved",Snackbar.LENGTH_LONG).show()
+
+
+        }
 
         viewModel.movies.observe(viewLifecycleOwner, Observer { response ->
             when(response) {

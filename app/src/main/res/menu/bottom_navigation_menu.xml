@@ -8,8 +8,6 @@
         android:title="Saved Movies"
         android:icon="@drawable/ic_favorite"/>
 
-    <item android:id="@+id/searchMoviesFragment"
-        android:title="Search Movie"
-        android:icon="@drawable/ic_search"/>
+
 
 </menu>
