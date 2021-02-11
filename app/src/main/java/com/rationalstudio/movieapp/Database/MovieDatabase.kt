@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import com.rationalstudio.movieapp.ui.Models.Movies
 
 
@@ -12,8 +11,7 @@ import com.rationalstudio.movieapp.ui.Models.Movies
     entities = [Movies::class],
     version = 1
 )
-@TypeConverters(Converters::class)
-abstract class MovieDatabase: RoomDatabase() {
+ abstract class MovieDatabase: RoomDatabase() {
     abstract fun getMovieDao(): MovieDao
 
     companion object{
@@ -29,7 +27,7 @@ abstract class MovieDatabase: RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 MovieDatabase::class.java,
-                "article_db.db"
+                "movies_db.db"
             ).build()
 
     }

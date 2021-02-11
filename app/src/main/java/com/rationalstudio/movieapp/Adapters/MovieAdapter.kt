@@ -17,7 +17,7 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     private val differCallback = object : DiffUtil.ItemCallback<Movies>(){
         override fun areItemsTheSame(oldItem: Movies, newItem: Movies): Boolean {
-            return oldItem.urlToImage == newItem.urlToImage
+            return oldItem.title == newItem.title
 
         }
 
@@ -40,10 +40,10 @@ class MovieAdapter: RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = differ.currentList[position]
         holder.itemView.apply {
-            Glide.with(this).load(movie.urlToImage).into(ivArticleImage)
 
+            Glide.with(this).load(movie.urlToImage).into(ivArticleImage)
             tvTitle.text = movie.title
-            tvDescription.text = movie.description
+        tvDescription.text = movie.description
 
             setOnClickListener {
                 onItemClickListener?.let { it(movie) }

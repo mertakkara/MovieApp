@@ -8,6 +8,6 @@ interface MoviesApi {
     @GET("/movies.php")
     suspend fun getMovies(): Response<MoviesResponse>
 
-    @GET("/movies.php")
+    @GET("movies.php")
     suspend fun searchMovies(): Response<MoviesResponse>
 }

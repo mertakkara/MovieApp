@@ -7,12 +7,13 @@ import com.rationalstudio.movieapp.ui.Models.Movies
 
 @Dao
 interface MovieDao {
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun upsert(article: Movies): Long
+    suspend fun upsert(movie: Movies): Long
 
     @Query("SELECT * FROM movies")
     fun getAllMovies(): LiveData<List<Movies>>
 
     @Delete
-    suspend fun deleteMovie(article: Movies)
+    suspend fun deleteMovie(movie: Movies)
 }
